@@ -278,4 +278,10 @@ h3 {
   .promo {
     margin-top: 80px;
   }
+
+  @media (max-width: 480px) {
+    .promo {
+      margin-top: 60px;
+    }
+  }
 }

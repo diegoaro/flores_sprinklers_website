@@ -9,11 +9,17 @@ document.querySelectorAll('.smooth-scroll').forEach((anchor) => {
   });
 });
 
-window.addEventListener('scroll', () => {
+function handleScroll() {
   const header = document.querySelector('.header');
   if (window.scrollY > 100) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
-});
+}
+
+// Add event listener for scroll events
+window.addEventListener('scroll', handleScroll);
+
+// For touch devices, use the 'touchmove' event instead of 'scroll'
+window.addEventListener('touchmove', handleScroll);
