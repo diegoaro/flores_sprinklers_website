@@ -32,6 +32,10 @@ h3 {
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .header.scrolled {
@@ -204,6 +208,10 @@ h3 {
   .header {
     flex-direction: column;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 
   .logo-container {
@@ -276,7 +284,11 @@ h3 {
   }
 
   .promo {
-    margin-top: 80px;
+    text-align: center;
+    padding: 0 20px 20px 20px; // Remove top padding
+    background-color: #ffffff;
+    color: #2c2c2c;
+    margin-top: 0px;
   }
 
   @media (max-width: 480px) {

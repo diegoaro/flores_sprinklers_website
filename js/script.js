@@ -1,11 +1,13 @@
 document.querySelectorAll('.smooth-scroll').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
 
     const targetId = this.getAttribute('href');
     const targetElement = document.querySelector(targetId);
 
-    targetElement.scrollIntoView({ behavior: 'smooth' });
+    targetElement.scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
 
@@ -18,8 +20,6 @@ function handleScroll() {
   }
 }
 
-// Add event listener for scroll events
 window.addEventListener('scroll', handleScroll);
 
-// For touch devices, use the 'touchmove' event instead of 'scroll'
 window.addEventListener('touchmove', handleScroll);
