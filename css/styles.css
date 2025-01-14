@@ -1,16 +1,14 @@
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #D5DDDF;
+  background-color: #d5dddf;
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3 {
-  font-family: 'Judson', serif;
-  color: #2C2C2C;
+h1, h2, h3 {
+  font-family: "Judson", serif;
+  color: #2c2c2c;
 }
 
 h2 {
@@ -30,8 +28,28 @@ h3 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.header.scrolled {
+  padding: 10px;
+  height: 10%;
+}
+
+.header.scrolled .logo-container,
+.header.scrolled .navigation a:not(.contact-button) {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.header.scrolled .navigation a.contact-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .logo-container {
@@ -58,14 +76,14 @@ h3 {
 .navigation a {
   text-decoration: none;
   font-size: 16px;
-  color: #1E1E1E;
+  color: #1e1e1e;
   padding: 8px 12px;
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }
 
 .contact-button {
-  background-color: #79BA92;
+  background-color: #79ba92;
   color: white;
   font-weight: 600;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -78,10 +96,10 @@ h3 {
 
 .promo {
   text-align: center;
-  padding: 120px 20px;
-  background-color: #FFFFFF;
-  color: #2C2C2C;
-  margin-top: 150px;
+  padding: 120px 20px 20px 20px;
+  background-color: #ffffff;
+  color: #2c2c2c;
+  margin-top: 0px;
 }
 
 .promo h2 {
@@ -93,14 +111,29 @@ h3 {
 }
 
 .promo img {
-  max-width: 100%;
+  max-width: 80%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.promo-images {
+  max-height: 10%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.promo-images img {
+  width: 45%;
+  max-width: 300px;
   height: auto;
   border-radius: 8px;
 }
 
 .services {
   padding: 50px 20px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
 .service-grid {
@@ -125,9 +158,8 @@ h3 {
   font-size: 16px;
 }
 
-/* Winterization Section */
 .winterization {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 50px 20px;
   margin: 20px 0;
   border-radius: 8px;
@@ -168,12 +200,10 @@ h3 {
   background-color: white;
 }
 
-/* Media Query for Responsiveness */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    align-items: center; /* Align header items to the center horizontally */
-    text-align: center;
+    align-items: center;
   }
 
   .logo-container {
@@ -182,12 +212,12 @@ h3 {
   }
 
   .logo {
-    width: clamp(20px, 8vw, 60px);
-    height: clamp(20px, 8vw, 60px);
+    width: clamp(40px, 15vw, 100px);
+    height: clamp(40px, 15vw, 100px);
   }
 
   .header h1 {
-    font-size: clamp(12px, 4vw, 24px);
+    font-size: clamp(20px, 8vw, 40px);
   }
 
   .navigation a {
@@ -196,6 +226,7 @@ h3 {
 
   .navigation .contact-button {
     display: block;
+    padding: 8px 12px;
   }
 
   .navigation {
@@ -205,5 +236,46 @@ h3 {
 
   .navigation a {
     font-size: 14px;
+  }
+
+  .services .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .services .col-md-4 {
+    width: 50%;
+    padding: 10px;
+  }
+
+  .winterization p {
+    text-align: justify;
+  }
+
+  .image-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-gallery figure {
+    width: 90%;
+    max-width: 400px;
+    margin: 10px 0;
+  }
+
+  .promo-images {
+    max-height: 0%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo-images img {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .promo {
+    margin-top: 80px;
   }
 }

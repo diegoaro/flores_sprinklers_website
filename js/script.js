@@ -1,22 +1,19 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Smooth scrolling for navigation links
-    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+document.querySelectorAll('.smooth-scroll').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
 
-            window.scrollTo({
-                top: targetElement.offsetTop - 80, // Adjust for fixed header
-                behavior: 'smooth'
-            });
-        });
-    });
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 
-    // Initialize the carousel
-    $('#myCarousel').carousel({
-        interval: 5000 // Carousel will auto-slide every 5 seconds
-    });
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header');
+  if (window.scrollY > 100) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
 });
