@@ -130,9 +130,7 @@ h3 {
 }
 
 .promo-images img {
-  width: 45%;
-  max-width: 300px;
-  height: auto;
+  width: 35%;
   border-radius: 8px;
 }
 
@@ -222,6 +220,11 @@ h3 {
   .logo {
     width: clamp(20px, 8vw, 60px);
     height: auto;
+  }
+
+  .promo-images img {
+    width: 5%;
+    border-radius: 8px;
   }
 
   .header h1 {
